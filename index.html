@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te Amo - Crie Sua Homenagem</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Corações animados -->
+    <div id="coracoes-container"></div>
+
+    <section class="form-container">
+        <h2>Escolha seu plano</h2>
+        <div class="planos">
+            <label>
+                <input type="radio" name="plano" value="1ano" checked>
+                <span>1 ano, sem música - R$9.90</span>
+            </label>
+            <label>
+                <input type="radio" name="plano" value="para-sempre">
+                <span>Para sempre, com música - R$19.90</span>
+            </label>
+        </div>
+
+        <h2>Personalize sua homenagem</h2>
+        <form id="formCasal">
+            <label for="nome">Nome do Casal:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="data_namoro">Início do Relacionamento:</label>
+            <input type="date" id="data_namoro" name="data_namoro" required>
+
+            <label for="mensagem">Mensagem Carinhosa:</label>
+            <button type="button" id="sugestao-btn">Sugestão ✨</button>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+
+            <label for="fotos">Escolher fotos do casal (max: 7 fotos)</label>
+            <input type="file" id="fotos" name="fotos[]" multiple accept="image/*">
+
+            <label for="youtube">Escolha um vídeo do YouTube:</label>
+            <input type="text" id="youtube" name="youtube" placeholder="Cole a URL do vídeo" disabled>
+        </form>
+    </section>
+
+    <!-- Adicionando o título antes da pré-visualização -->
+    <h2 id="titulo-preview">Sua página vai ficar assim:</h2>
+
+    <section class="preview">
+        <h3 id="preview-endereco">primeirobeijo.com/<span id="preview-slug"></span></h3>
+        <h2 id="preview-titulo">Nome do Casal</h2>
+
+        <h3 id="contador-titulo">Juntos</h3>
+        <div id="contador-container">
+            <div class="contador-box"><span id="contador-anos">0</span><p>Anos</p></div>
+            <div class="contador-box"><span id="contador-meses">0</span><p>Meses</p></div>
+            <div class="contador-box"><span id="contador-dias">0</span><p>Dias</p></div>
+            <div class="contador-box"><span id="contador-horas">0</span><p>Horas</p></div>
+            <div class="contador-box"><span id="contador-minutos">0</span><p>Minutos</p></div>
+            <div class="contador-box"><span id="contador-segundos">0</span><p>Segundos</p></div>
+        </div>
+
+        <!-- Novo container para manter tudo bem organizado -->
+        <div id="preview-container">
+            <div class="preview-imagem-container">
+                <div id="preview-slideshow" class="slideshow"></div>
+                <p id="preview-mensagem" class="mensagem-romantica">Sua mensagem romântica aparecerá aqui</p>
+            </div>
+            <div id="preview-musica">
+                <h3>Nossa música ❤️</h3>
+                <div class="musica-info">
+                    <img id="musica-thumb" src="" class="musica-thumb" alt="Thumbnail da música">
+                    <button id="play-btn" class="play-btn">▶️ Play</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="botao-container">
+        <button type="button" id="criarPaginaBtn">Criar Minha Página</button>
+    </div>
+
+    <!-- Campo de e-mail e botão de pagamento -->
+    <div id="emailPagamentoContainer" style="display: none;">
+        <h3>Digite seu e-mail para receber o link da sua página</h3>
+        <input type="email" id="emailPagamento" placeholder="Digite seu e-mail" required>
+        <button id="gerarPagamentoBtn">Gerar Pagamento</button>
+    </div>
+
+    <!-- Status do pagamento -->
+    <div id="statusPagamento" style="display: none;">
+        <h3>Aguardando pagamento...</h3>
+        <p id="mensagemStatus">Gerando pagamento...</p>
+    </div>
+
+    <!-- Seção para o checkout do Mercado Pago -->
+    <div id="mercadoPagoContainer" style="display: none;"></div>
+
+    <footer>
+        <p>&copy; 2025 Primeiro Beijo - Todos os direitos reservados</p>
+    </footer>
+
+<script src="js/script.js" defer></script></body>
+</html>

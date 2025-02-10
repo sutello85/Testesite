@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento Confirmado</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="confirmacao">
+        <h2>Pagamento Confirmado!</h2>
+        <p>O link da sua página foi enviado para o e-mail: <span id="emailUsuario"></span></p>
+        <p>Data e horário da confirmação: <span id="dataHora"></span></p>
+        <h3>Sua página está pronta:</h3>
+        <a id="linkPagina" href="#" target="_blank"></a>
+    </section>
+
+    <script>
+        let urlParams = new URLSearchParams(window.location.search);
+        let email = urlParams.get('email');
+        let nome = urlParams.get('nome');
+        let slug = nome.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '').replace(/-$/, '');
+        
+        document.getElementById('emailUsuario').innerText = email;
+        document.getElementById('dataHora').innerText = new Date().toLocaleString();
+        document.getElementById('linkPagina').innerText = "primeirobeijo.com/" + slug;
+        document.getElementById('linkPagina').href = "primeirobeijo.com/" + slug;
+    </script>
+</body>
+</html>
