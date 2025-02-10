@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: white;
+    text-align: center;
+}
+
+/* Estilo do cabeçalho */
+header {
+    padding: 20px;
+    font-size: 24px;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    font-family: 'Pacifico', cursive;
+}
+
+/* Estilo do formulário */
+.form-container {
+    background: #1a1a1a;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #ff7eb3;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background: #ff4d6d;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button:hover {
+    background: #ff1e56;
+}
+
+/* Estilo da pré-visualização */
+.preview {
+    margin-top: 30px;
+    padding: 20px;
+    background: #111;
+    border-radius: 10px;
+}
+
+#preview-endereco {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#preview-titulo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 28px;
+    color: #ff7eb3;
+}
+
+/* Slideshow */
+.slideshow {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+}
+
+.slideshow img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    border: 5px solid #ff7eb3;
+}
+
+/* Vídeo */
+#preview-video iframe {
+    width: 100%;
+    max-width: 500px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+/* Contador dentro do coração */
+#contador-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+#contador-coracao {
+    background: #ff4d6d;
+    color: white;
+    padding: 15px;
+    width: 280px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 10px rgba(255, 77, 109, 0.8);
+}
+
+/* Moldura das imagens */
+.slideshow img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    border: 5px solid #ff7eb3;
+}
+
+/* Efeito de corações subindo */
+#coracoes-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.coracao {
+    position: absolute;
+    color: #ff4d6d;
+    font-size: 24px;
+    animation: subir 5s linear infinite;
+}
+
+@keyframes subir {
+    0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+}
+
+/* Botão Criar Página */
+.botao-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#criarPaginaBtn {
+    background: #7D00FF; /* Roxo bonito */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#criarPaginaBtn:hover {
+    background: #5B00CC; /* Roxo mais escuro no hover */
+}
+/* Estilo do contador */
+#contador-titulo {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#contador-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    margin: 10px auto;
+    max-width: 400px;
+}
+
+.contador-box {
+    background: #1a1a1a;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #ff4d6d;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100px;
+}
+
+.contador-box span {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff4d6d;
+}
+
+.contador-box p {
+    font-size: 14px;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+/* Slideshow com moldura romântica e gradiente */
+.slideshow-romantico {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    margin: 10px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 6px solid #ff7eb3; /* Moldura romântica */
+    box-shadow: 0px 0px 15px rgba(255, 126, 179, 0.7);
+}
+
+.slideshow-romantico img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Gradiente na parte de baixo da imagem */
+.slideshow-romantico::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    border-radius: 15px;
+}
+
+/* Ajuste do vídeo */
+#preview-video {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 350px;
+}
+
+#preview-video iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    border: 3px solid #ff7eb3;
+    box-shadow: 0px 0px 15px rgba(255, 126, 179, 0.7);
+}
+
+/* Mensagem romântica estilizada */
+.mensagem-romantica {
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    color: #ff7eb3;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255, 126, 179, 0.2);
+    display: inline-block;
+}
+
+/* Ajuste no container de pré-visualização */
+#preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Ajuste no slideshow para ser responsivo */
+.slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 6px solid #ff7eb3; /* Moldura romântica */
+    box-shadow: 0px 0px 15px rgba(255, 126, 179, 0.7);
+}
+
+.slideshow img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Gradiente na parte de baixo da imagem */
+.slideshow::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    border-radius: 15px;
+}
+
+/* Ajuste do vídeo */
+#preview-video {
+    width: 100%;
+    max-width: 350px;
+    margin-top: 10px;
+    display: none; /* Escondido por padrão */
+}
+
+#preview-video iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    border: 3px solid #ff7eb3;
+    box-shadow: 0px 0px 15px rgba(255, 126, 179, 0.7);
+}
+
+/* Estilização da mensagem romântica */
+.mensagem-romantica {
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    color: #ff7eb3;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255, 126, 179, 0.2);
+    display: inline-block;
+    text-align: center;
+}
+
+.preview-imagem-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slideshow img {
+    width: 100%;
+    border-radius: 15px;
+    display: block;
+}
+
+/* Estilo da mensagem romântica sobre a imagem */
+.mensagem-romantica {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente */
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 90%;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.preview-imagem-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Estiliza o slideshow */
+.slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    overflow: hidden;
+}
+
+.slideshow img {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+}
+
+/* Mensagem romântica sobre a imagem */
+.mensagem-romantica {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente */
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 90%;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Container da imagem e mensagem */
+.preview-imagem-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px; /* Ajuste o tamanho conforme necessário */
+}
+
+/* Mensagem sobre a imagem */
+.mensagem-romantica {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    word-wrap: break-word; /* Garante que palavras longas quebrem corretamente */
+    white-space: normal; /* Permite a quebra de linha */
+}
+
+/* Garantir que as imagens fiquem responsivas */
+.preview-img-romantica {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    border: 5px solid #ff7eb3;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estilizando a seção de música */
+#preview-musica {
+    margin-top: 20px;
+    text-align: center;
+    display: none; /* Inicialmente oculto */
+}
+
+#preview-musica h3 {
+    font-size: 22px;
+    color: #ff7eb3;
+    margin-bottom: 10px;
+}
+
+.musica-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.musica-thumb {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    border: 3px solid #ff7eb3;
+}
+
+.play-btn {
+    background: #ff4d6d;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.play-btn:hover {
+    background: #ff1e56;
+}
+
+#coracoes-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999; /* Certifica que os corações fiquem sobre tudo */
+}
+
+.coracao {
+    position: absolute;
+    font-size: 24px;
+    color: red;
+    opacity: 0.8;
+    animation: subirCoracoes linear infinite;
+}
+
+@keyframes subirCoracoes {
+    0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+    }
+}
